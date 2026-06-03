@@ -1,0 +1,153 @@
+/* global.css */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Hlavní barvy z designu */
+    --primary-blue: #1d4ed8;
+    --primary-blue-hover: #1e40af;
+    --accent-yellow: #facc15;
+    --accent-yellow-hover: #eab308;
+
+    /* Barvy textu a pozadí */
+    --text-dark: #111827;
+    --text-light: #6b7280;
+    --bg-light: #f3f4f6;
+    --bg-white: #ffffff;
+
+    /* Písmo */
+    --font-main: 'Inter', system-ui, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--bg-white);
+}
+
+.fa-svg {
+    width: 1.3em;
+    height: 1.3em;
+    display: block;
+}
+
+/* --- MODÁLNÍ OKNO --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 23, 42, 0.7);
+    /* Tmavě modré poloprůhledné pozadí */
+    display: none;
+    /* V základu schované */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Musí být úplně nahoře přes všechno */
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Třída pro zobrazení animace */
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    /* Šířka okna tak akorát na text a dvě fotky */
+    max-height: 90vh;
+    /* Maximální výška, aby nezmizelo ze stránky */
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+    overflow-y: auto;
+    /* Pokud je text dlouhý, lze v okně scrollovat */
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #f1f5f9;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-dark);
+    transition: all 0.2s;
+}
+
+.modal-close:hover {
+    background: #e2e8f0;
+    color: var(--primary-blue);
+}
+
+/* Rozložení uvnitř okna (Text vlevo, Obrázky vpravo) */
+.modal-body-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Dva stejné sloupce */
+    gap: 2rem;
+}
+
+/* Mobilní responzivita: Sloupce se dají pod sebe */
+@media (max-width: 768px) {
+    .modal-body-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+    }
+}
+
+/* Styly pro samotný text a obrázky v okně */
+.modal-text h3 {
+    color: var(--primary-blue);
+    margin-top: 0;
+}
+
+.modal-text h4 {
+    margin: 1.5rem 0 0.5rem 0;
+    color: var(--text-dark);
+}
+
+.modal-text ul {
+    padding-left: 1.2rem;
+    margin: 0;
+    color: var(--text-light);
+}
+
+.modal-text li {
+    margin-bottom: 0.25rem;
+}
+
+.modal-gallery img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

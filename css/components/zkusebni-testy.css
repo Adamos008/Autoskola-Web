@@ -1,0 +1,127 @@
+/* css/components/tests.css */
+
+.tests-section {
+    padding: 5rem 0;
+    background-color: var(--bg-white);
+}
+
+.tests-section .section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+/* --- MŘÍŽKA PRO ROZDĚLENÍ NA 2 SLOUPCE --- */
+.tests-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: stretch;
+    /* Aby oba sloupce byly stejně vysoké */
+}
+
+.tests-subtitle {
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* --- LEVÁ STRANA: SEZNAM KE STAŽENÍ --- */
+.tests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* Mezera mezi kartami */
+}
+
+.test-list-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    /* Zakulacení rohů jako v návrhu */
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+/* Efekt při najetí na kartu */
+.test-list-item:hover {
+    border-color: var(--primary-blue);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.test-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #eff6ff;
+    /* Světlounce modrá */
+    color: var(--primary-blue);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.test-content h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.125rem;
+    color: #111827;
+}
+
+.test-content span {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* --- PRAVÁ STRANA: KARTA E-TESTY --- */
+.etest-card {
+    background-color: #f8fafc;
+    /* Velmi jemné zvýraznění pozadí */
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 3.2rem);
+    /* Odečtení výšky nadpisu, aby karty lícovaly */
+}
+
+.etest-icon {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.etest-card h4 {
+    font-size: 1.5rem;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.etest-card p {
+    color: #4b5563;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+/* --- RESPONSIVITA --- */
+@media (max-width: 1024px) {
+    .tests-grid {
+        grid-template-columns: 1fr;
+        /* Na menších obrazovkách skočí eTesty pod seznam */
+        gap: 3rem;
+    }
+
+    .etest-card {
+        height: auto;
+    }
+}

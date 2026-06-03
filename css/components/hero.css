@@ -1,0 +1,130 @@
+.hero {
+    background-color: #f4f7fa;
+    padding: 4rem 0;
+    overflow: hidden;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+/* --- LEVÁ ČÁST S TEXTEM --- */
+.hero-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+/* Hlavní nadpis */
+.hero-title {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.text-blue {
+    color: var(--primary-blue);
+}
+
+/* Podnadpis */
+.hero-subtitle {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #6b7280;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
+
+/* Odstavec */
+.hero-text {
+    font-size: 1.5rem;
+    color: #4b5563;
+    margin-bottom: 2.5rem;
+    max-width: 90%;
+}
+
+/* Tlačítka */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+/* --- STATISTIKY --- */
+.hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+/* --- PRAVÁ ČÁST S OBRÁZKEM  --- */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* --- RESPONSIVITA --- */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 4rem 0;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 475px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        gap: 1.5rem;
+    }
+}

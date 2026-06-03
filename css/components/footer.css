@@ -1,0 +1,61 @@
+/* css/components/footer.css */
+
+.site-footer {
+    background-color: var(--text-dark);
+    /* Tmavé pozadí definované v global.css */
+    color: #9ca3af;
+    /* Světle šedá barva textu, aby moc nesvítil */
+    padding: 2rem 0;
+    border-top: 4px solid var(--primary-blue);
+    /* Tenká modrá linka pro propojení s designem */
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Na mobilech umožní zalomení pod sebe */
+    gap: 1.5rem;
+}
+
+/* --- LOGO V PATIČCE --- */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon-small {
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.logo-text-light {
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #ffffff;
+    /* Bílý text loga, aby na tmavém pozadí vynikl */
+}
+
+/* --- COPYRIGHT TEXT --- */
+.footer-copyright {
+    font-size: 0.875rem;
+}
+
+/* --- RESPONSIVITA --- */
+@media (max-width: 640px) {
+    .footer-inner {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}

@@ -1,0 +1,224 @@
+.pricing-section {
+    padding: 4rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Filtr (Tlačítka nad ceníkem) */
+.pricing-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+}
+
+.filter-btn.active {
+    background: var(--primary-blue);
+    color: white;
+}
+
+/* Mřížka karet */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Samotná karta ceníku */
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--primary-blue);
+    border-radius: 12px;
+    padding: 2rem;
+    background: var(--bg-white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* --- ZVÝRAZNĚNÍ VÝHODNÝCH NABÍDEK (Kombi karty) --- */
+
+/* Změna barvy a rámečku pro akční karty */
+.pricing-card[data-category="kombi"] {
+    border: 2px solid var(--primary-blue);
+    background-color: #eff6ff;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(29, 78, 216, 0.15);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+/* Ochrana proti přepisování stínu při najetí myší (pokud máš hover efekty) */
+.pricing-card[data-category="kombi"]:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(29, 78, 216, 0.2);
+}
+
+/* Automatický štítek v pravém horním rohu - bez nutnosti měnit HTML! */
+.pricing-card[data-category="kombi"]::before {
+    content: "NEJVÝHODNĚJŠÍ";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.5rem 1rem;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 10px;
+    letter-spacing: 0.5px;
+    z-index: 1;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary-blue);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.pricing-card-header h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+.pricing-card-header .text-blue {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-desc {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Styly pro odrážkový seznam */
+.pricing-features {
+    list-style-type: square;
+    /* Čtvercové odrážky podle návrhu */
+    padding-left: 1.25rem;
+    margin-bottom: 2rem;
+    color: #374151;
+}
+
+.pricing-features li {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* Spodek karty (linka, cena a tlačítko) */
+.pricing-bottom {
+    margin-top: auto;
+    /* Tohle zatlačí cenu s tlačítkem vždy úplně dolů */
+    border-top: 1px solid #e5e7eb;
+    /* Ta tenká oddělovací linka */
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pricing-price {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #000000;
+}
+
+.pricing-bottom .btn {
+    width: 100%;
+    /* Tlačítko přes celou šířku karty */
+}
+
+/* --- TLAČÍTKO ZOBRAZIT VÍCE --- */
+.pricing-show-more-container {
+    text-align: center;
+    margin-top: 3rem;
+    display: none;
+}
+
+/* Třída pro tvrdé skrytí přebytečných karet */
+.hidden-card {
+    display: none !important;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Zakážeme zalamování textu */
+.action-btn span {
+    white-space: nowrap;
+}
+
+/* Pojistka pro správnou velikost ikony */
+.btn-icon {
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+
+/* --- ANIMACE PRO ZOBRAZENÍ KARET --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Tablet: 2 sloupce */
+@media (max-width: 1024px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobil: 1 sloupec */
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}

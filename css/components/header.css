@@ -1,0 +1,139 @@
+/* css/components/header.css */
+
+.site-header {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid #e5e7eb;
+    /* Jemná linka pod hlavičkou */
+    position: sticky;
+    /* Hlavička zůstane nahoře při scrollování */
+    top: 0;
+    z-index: 1000;
+}
+
+.site-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    /* Pevná výška hlavičky */
+}
+
+/* --- LOGO --- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.logo-icon {
+    background-color: var(--primary-blue);
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.logo-text {
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+/* --- DESKTOP NAVIGACE --- */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-blue);
+}
+
+/* --- MOBILNÍ MENU --- */
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+/* --- IKONY V MOBILNÍM TLAČÍTKU --- */
+.mobile-toggle svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+
+/* Výchozí stav: křížek je schovaný */
+.icon-xmark {
+    display: none !important;
+}
+
+/* Stav po otevření menu: čárky zmizí, křížek se objeví */
+.mobile-toggle.menu-open .icon-bars {
+    display: none !important;
+}
+
+.mobile-toggle.menu-open .icon-xmark {
+    display: block !important;
+}
+
+/* lg (pod 1024px schováme klasické menu a ukážeme hamburger) */
+@media (max-width: 1024px) {
+    .mobile-toggle {
+        display: block;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-white);
+        border-bottom: 1px solid #e5e7eb;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    /* Třída, kterou přidáme přes JS pro zobrazení menu */
+    .main-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1.5rem;
+        border-bottom: 1px solid #f3f4f6;
+    }
+}

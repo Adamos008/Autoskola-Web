@@ -1,0 +1,156 @@
+/* css/components/contact.css */
+
+.contact-section {
+    padding: 5rem 0;
+    background-color: #f8fafc;
+    /* Velmi lehký modro-šedý nádech pro oddělení sekce */
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.contact-header .section-title {
+    margin-bottom: 1rem;
+    /* Zmenšený margin zespodu, protože máme subtitle */
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: #4b5563;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- MŘÍŽKA KONTAKTU --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    /* Mapa zabere trochu víc místa než text */
+    gap: 4rem;
+    align-items: stretch;
+}
+
+/* --- LEVÁ STRANA: INFORMACE --- */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.contact-info-card {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+/* Ikony v modrém (změněno z oranžové na tvoji modrou) */
+.contact-icon {
+    width: 56px;
+    height: 56px;
+    background-color: #e2eeff;
+    color: var(--primary-blue);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.contact-details h4 {
+    font-size: 1.25rem;
+    color: #111827;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.contact-details .contact-adress,
+.contact-details .phone-person {
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Specifické styly pro rozdělený telefon */
+.phone-person {
+    margin-bottom: 0.25rem;
+}
+
+.person-name {
+    display: block;
+    font-size: 1rem;
+    color: #6b7280;
+    margin-bottom: 0.1rem;
+}
+
+/* Odkazy (telefon, email) */
+.contact-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--primary-blue-hover);
+    text-decoration: underline;
+}
+
+.contact-number {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* --- PRAVÁ STRANA: MAPA --- */
+.contact-map {
+    width: 100%;
+    min-height: 400px;
+    background-color: #e5e7eb;
+    /* Placeholder barva, než se načte iframe */
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+}
+
+/* --- RESPONSIVITA --- */
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        /* Na menších obrazovkách mapa skočí pod kontakt */
+        gap: 3rem;
+    }
+
+    .contact-map {
+        min-height: 350px;
+        /* Mapa může být na tabletu trošku nižší */
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-item {
+        gap: 1rem;
+        /* Trochu zmenšíme mezery na malém mobilu */
+    }
+
+    .contact-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+    }
+}

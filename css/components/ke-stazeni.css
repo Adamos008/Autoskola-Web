@@ -1,0 +1,110 @@
+.downloads-section {
+    padding: 5rem 0;
+    background-color: var(--bg-white);
+}
+
+/* Centrování nadpisu sekce */
+.downloads-section .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 3.5rem;
+    color: #000;
+}
+
+/* --- MŘÍŽKA (GRID) --- */
+.downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* --- KARTA DOKUMENTU --- */
+.download-card {
+    background-color: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f3f4f6;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efekt při najetí myší na kartu */
+.download-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* --- IKONA DOKUMENTU --- */
+.download-icon {
+    background-color: #e2eeff;
+    color: var(--primary-blue);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- TEXTY V KARTĚ --- */
+.download-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.download-subtitle {
+    font-size: 0.95rem;
+    color: #585a5e;
+    margin-bottom: 2rem;
+}
+
+/* --- ŽLUTÉ TLAČÍTKO --- */
+.btn-yellow {
+    background-color: var(--accent-yellow);
+    color: #000000;
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 0.5rem 2rem;
+    border-radius: 4px;
+    margin-top: auto;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-yellow:hover {
+    background-color: var(--accent-yellow-hover);
+}
+
+/* --- RESPONSIVITA --- */
+@media (max-width: 1024px) {
+    .downloads-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .downloads-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 475px) {
+    .downloads-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .download-card {
+        padding: 2rem 1rem;
+    }
+}
