@@ -151,3 +151,19 @@ body {
     margin-bottom: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 768px) {
+
+    body,
+    p,
+    .section-subtitle,
+    .contact-text,
+    .modal-text p {
+        font-weight: 500 !important;
+    }
+
+    body {
+        -webkit-font-smoothing: auto;
+        -moz-osx-font-smoothing: auto;
+    }
+}
