@@ -3,7 +3,6 @@
     background-color: var(--bg-white);
 }
 
-/* Centrování nadpisu sekce */
 .downloads-section .section-title {
     text-align: center;
     font-size: 2.5rem;
@@ -12,14 +11,12 @@
     color: #000;
 }
 
-/* --- MŘÍŽKA (GRID) --- */
 .downloads-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-/* --- KARTA DOKUMENTU --- */
 .download-card {
     background-color: #ffffff;
     padding: 2.5rem 2rem;
@@ -34,13 +31,11 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efekt při najetí myší na kartu */
 .download-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* --- IKONA DOKUMENTU --- */
 .download-icon {
     background-color: #e2eeff;
     color: var(--primary-blue);
@@ -54,7 +49,6 @@
     margin-bottom: 1.5rem;
 }
 
-/* --- TEXTY V KARTĚ --- */
 .download-title {
     font-size: 1.125rem;
     font-weight: 700;
@@ -69,7 +63,6 @@
     margin-bottom: 2rem;
 }
 
-/* --- ŽLUTÉ TLAČÍTKO --- */
 .btn-yellow {
     background-color: var(--accent-yellow);
     color: #000000;
@@ -86,7 +79,6 @@
     background-color: var(--accent-yellow-hover);
 }
 
-/* --- RESPONSIVITA --- */
 @media (max-width: 1024px) {
     .downloads-grid {
         grid-template-columns: repeat(2, 1fr);

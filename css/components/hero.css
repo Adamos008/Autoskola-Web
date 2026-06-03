@@ -11,13 +11,11 @@
     gap: 3rem;
 }
 
-/* --- LEVÁ ČÁST S TEXTEM --- */
 .hero-content {
     flex: 1;
     max-width: 650px;
 }
 
-/* Hlavní nadpis */
 .hero-title {
     font-size: clamp(3rem, 6vw, 4.5rem);
     font-weight: 900;
@@ -31,7 +29,6 @@
     color: var(--primary-blue);
 }
 
-/* Podnadpis */
 .hero-subtitle {
     font-size: 1.7rem;
     font-weight: 700;
@@ -40,7 +37,6 @@
     letter-spacing: 0.05em;
 }
 
-/* Odstavec */
 .hero-text {
     font-size: 1.5rem;
     color: #4b5563;
@@ -48,7 +44,6 @@
     max-width: 90%;
 }
 
-/* Tlačítka */
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -56,7 +51,6 @@
     flex-wrap: wrap;
 }
 
-/* --- STATISTIKY --- */
 .hero-stats {
     display: flex;
     gap: 2.5rem;
@@ -81,7 +75,6 @@
     font-weight: 500;
 }
 
-/* --- PRAVÁ ČÁST S OBRÁZKEM  --- */
 .hero-image {
     flex: 1;
     display: flex;
@@ -96,7 +89,6 @@
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* --- RESPONSIVITA --- */
 @media (max-width: 1024px) {
     .hero {
         padding: 4rem 0;

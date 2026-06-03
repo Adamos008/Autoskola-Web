@@ -8,7 +8,6 @@
     margin-bottom: 2rem;
 }
 
-/* Filtr (Tlačítka nad ceníkem) */
 .pricing-filters {
     display: flex;
     justify-content: center;
@@ -30,14 +29,12 @@
     color: white;
 }
 
-/* Mřížka karet */
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-/* Samotná karta ceníku */
 .pricing-card {
     display: flex;
     flex-direction: column;
@@ -49,9 +46,7 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* --- ZVÝRAZNĚNÍ VÝHODNÝCH NABÍDEK (Kombi karty) --- */
 
-/* Změna barvy a rámečku pro akční karty */
 .pricing-card[data-category="kombi"] {
     border: 2px solid var(--primary-blue);
     background-color: #eff6ff;
@@ -61,13 +56,11 @@
     transition: all 0.3s ease;
 }
 
-/* Ochrana proti přepisování stínu při najetí myší (pokud máš hover efekty) */
 .pricing-card[data-category="kombi"]:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(29, 78, 216, 0.2);
 }
 
-/* Automatický štítek v pravém horním rohu - bez nutnosti měnit HTML! */
 .pricing-card[data-category="kombi"]::before {
     content: "NEJVÝHODNĚJŠÍ";
     position: absolute;
@@ -122,10 +115,8 @@
     flex-grow: 1;
 }
 
-/* Styly pro odrážkový seznam */
 .pricing-features {
     list-style-type: square;
-    /* Čtvercové odrážky podle návrhu */
     padding-left: 1.25rem;
     margin-bottom: 2rem;
     color: #374151;
@@ -136,12 +127,9 @@
     font-size: 0.9rem;
 }
 
-/* Spodek karty (linka, cena a tlačítko) */
 .pricing-bottom {
     margin-top: auto;
-    /* Tohle zatlačí cenu s tlačítkem vždy úplně dolů */
     border-top: 1px solid #e5e7eb;
-    /* Ta tenká oddělovací linka */
     padding-top: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -156,17 +144,14 @@
 
 .pricing-bottom .btn {
     width: 100%;
-    /* Tlačítko přes celou šířku karty */
 }
 
-/* --- TLAČÍTKO ZOBRAZIT VÍCE --- */
 .pricing-show-more-container {
     text-align: center;
     margin-top: 3rem;
     display: none;
 }
 
-/* Třída pro tvrdé skrytí přebytečných karet */
 .hidden-card {
     display: none !important;
 }
@@ -178,12 +163,10 @@
     gap: 10px;
 }
 
-/* Zakážeme zalamování textu */
 .action-btn span {
     white-space: nowrap;
 }
 
-/* Pojistka pro správnou velikost ikony */
 .btn-icon {
     width: 16px !important;
     height: 16px !important;
@@ -192,7 +175,6 @@
 }
 
 
-/* --- ANIMACE PRO ZOBRAZENÍ KARET --- */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -209,14 +191,12 @@
     animation: fadeInUp 0.5s ease forwards;
 }
 
-/* Tablet: 2 sloupce */
 @media (max-width: 1024px) {
     .pricing-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Mobil: 1 sloupec */
 @media (max-width: 768px) {
     .pricing-grid {
         grid-template-columns: 1fr;

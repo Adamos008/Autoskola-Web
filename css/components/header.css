@@ -1,11 +1,7 @@
-/* css/components/header.css */
-
 .site-header {
     background-color: var(--bg-white);
     border-bottom: 1px solid #e5e7eb;
-    /* Jemná linka pod hlavičkou */
     position: sticky;
-    /* Hlavička zůstane nahoře při scrollování */
     top: 0;
     z-index: 1000;
 }
@@ -15,10 +11,8 @@
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    /* Pevná výška hlavičky */
 }
 
-/* --- LOGO --- */
 .logo {
     display: flex;
     align-items: center;
@@ -45,7 +39,6 @@
     font-size: 1.25rem;
 }
 
-/* --- DESKTOP NAVIGACE --- */
 .nav-links {
     display: flex;
     list-style: none;
@@ -63,7 +56,6 @@
     color: var(--primary-blue);
 }
 
-/* --- MOBILNÍ MENU --- */
 .mobile-toggle {
     display: none;
     background: none;
@@ -73,19 +65,16 @@
     cursor: pointer;
 }
 
-/* --- IKONY V MOBILNÍM TLAČÍTKU --- */
 .mobile-toggle svg {
     width: 28px;
     height: 28px;
     display: block;
 }
 
-/* Výchozí stav: křížek je schovaný */
 .icon-xmark {
     display: none !important;
 }
 
-/* Stav po otevření menu: čárky zmizí, křížek se objeví */
 .mobile-toggle.menu-open .icon-bars {
     display: none !important;
 }
@@ -94,7 +83,6 @@
     display: block !important;
 }
 
-/* lg (pod 1024px schováme klasické menu a ukážeme hamburger) */
 @media (max-width: 1024px) {
     .mobile-toggle {
         display: block;
@@ -114,7 +102,6 @@
         z-index: 999;
     }
 
-    /* Třída, kterou přidáme přes JS pro zobrazení menu */
     .main-nav.active {
         transform: translateY(0);
         opacity: 1;
