@@ -142,4 +142,8 @@
     .hero-text {
         font-size: 1.2rem;
     }
+
+    .hero-title {
+        font-weight: bold;
+    }
 }
