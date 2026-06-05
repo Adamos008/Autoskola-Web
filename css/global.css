@@ -99,7 +99,6 @@ body {
 .modal-body-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* Dva stejné sloupce */
     gap: 2rem;
 }
 

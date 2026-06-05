@@ -201,4 +201,14 @@
     .pricing-grid {
         grid-template-columns: 1fr;
     }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 475px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
 }

@@ -49,3 +49,9 @@
         text-align: center;
     }
 }
+
+@media (max-width: 475px) {
+    .footer-copyright {
+        font-size: 0.775rem;
+    }
+}
