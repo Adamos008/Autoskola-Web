@@ -9,19 +9,16 @@
 }
 
 :root {
-    /* Hlavní barvy z designu */
     --primary-blue: #1d4ed8;
     --primary-blue-hover: #1e40af;
     --accent-yellow: #facc15;
     --accent-yellow-hover: #eab308;
 
-    /* Barvy textu a pozadí */
     --text-dark: #111827;
     --text-light: #6b7280;
     --bg-light: #f3f4f6;
     --bg-white: #ffffff;
 
-    /* Písmo */
     --font-main: 'Roboto', system-ui, sans-serif;
 }
 
